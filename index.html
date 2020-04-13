@@ -1,22 +1,58 @@
 <!DOCTYPE html>
 <html>
 <body>
-
-<label for="cpu_brand">Select your CPU Brand</label>
+	
 
 <select id="cpu_brand">
-  <option value="intel">Intel/option>
-  <option value="amd">AMD</option>
+ 	<option value = "intel" selected>Intel</option>
+  	<option value = "amd">AMD</option>
 </select>
-  
-  <button onclick="myFunction()">Select Option</button>
+
+<button onclick ="myFunction()">Select</button>
+
+<select id ="intel_cpus" style ="display:none">
+	<option value = "9100">i3 - 9100</option>
+	<option value = "9300">i3 - 9300</option>
+	<option value = "9400">i5 - 9400</option>
+	<option value = "9500">i5 - 9500</option>
+	<option value = "9600">i5 - 9600</option>
+	<option value = "9600K">i5 - 9600K</option>
+	<option value = "9700">i7 - 9700</option>
+	<option value = "9700K">i7 - 9700K</option>
+    <option value = "9900">i9 - 9900</option>
+    <option value = "9900K">i9 - 9900K</option>
+    <option value = "9900KS">i9 - 9900KS</option>
+</select>
+
+<select id = "amd_cpus" style = "display:none">
+	<option value = "3200g">Ryzen 3 3200g</option>
+    <option value = "3400g">Ryzen 5 3400g</option>
+    <option value = "3600">Ryzen 5 3600</option>
+    <option value = "3600x">Ryzen 5 3600x</option>
+    <option value = "3700x">Ryzen 7 3700x</option>
+    <option value = "3800x">Ryzen 7 3800x</option>
+    <option value = "3900x">Ryzen 9 3900x</option>
+    <option value = "3950x">Ryzen 9 3950x</option>
+</select>
+
+<h1 id ="no_cpu" style ="display:none">No CPU Brand Selected </h1>
 
 <script>
-function myFunction() {
-  document.getElementById("amd").selected = "true";
+function myFunction(){
+	if (document.getElementById("cpu_brand").value=="intel") {
+		document.getElementById("intel_cpus").style.display = "block";
+		document.getElementById("amd_cpus").style.display = "none";
+        document.getElementById("no_cpu").style.display = "none";
+	} else if (document.getElementById("cpu_brand").value=="amd") {
+      	document.getElementById("intel_cpus").style.display = "none";
+		document.getElementById("amd_cpus").style.display = "block";
+        document.getElementById("no_cpu").style.display = "none";
+	} else {
+    	document.getElementById("no_cpu").style.display = "block";
+        document.getElementById("intel_cpus").style.display = "none";
+        document.getElementById("amd_cpus").style.display = "none";
+    }
 }
 </script>
-
-  
 </body>
 </html>
