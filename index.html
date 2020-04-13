@@ -9,7 +9,7 @@
 Your Name: <input type="text" id="name"><br><br>
 Contact Email: <input type="email" id="email"><br><br>
 Budget: <input type="number" id="price"><br><br>
-Briefly describe your needs for this computer<br>
+	<center>Briefly describe your needs for this computer</center><br>
 <textarea rows="4" cols="40" id="usefor"></textarea><br><br>
 Additional Options:<br>
 Working <input type = "checkbox" id="work" onclick = "ifdesc()"><br>
@@ -27,7 +27,7 @@ function ifdesc() {
   var text = document.getElementById("descuse");
   if (checkBox.checked == true || checkBox2.checked == true || checkBox3.checked == true) { 
   document.getElementById("descdesc").style.display = "block";
-  	document.getElementById("descdesc").innerHTML = "Please describe any specific requirements as per the above option(s). <br> Target Resolution (1080p, 1440p, 4K, etc.)<br> Frames Per Second (FPS - 60, 144, 240, etc.)";
+  	document.getElementById("descdesc").innerHTML = "Please describe any specific requirements as per the above option(s). <br><br> Target Resolution (1080p, 1440p, 4K, etc.)<br> Frames Per Second (FPS - 60, 144, 240, etc.)";
     text.style.display = "block";
   } else {
      text.style.display = "none";
