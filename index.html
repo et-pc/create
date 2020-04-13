@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html>
-	<head>
+<head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</head>
-<body>
-	
+</head>
 
+<body>
 <select id="cpu_brand">
  	<option value = "intel" selected>Intel</option>
   	<option value = "amd">AMD</option>
 </select>
 
-<button onclick ="myFunction()">Select</button>
+<button onclick ="myFunction()">Select Brand</button>
 
-<select id ="intel_cpus" style ="display:none">
+<select id ="intel_cpus" style ="display:none" onchange = "myFunctiony()">
 	<option value = "9100">i3 - 9100</option>
 	<option value = "9300">i3 - 9300</option>
 	<option value = "9400">i5 - 9400</option>
@@ -27,7 +26,7 @@
     <option value = "9900KS">i9 - 9900KS</option>
 </select>
 
-<select id = "amd_cpus" style = "display:none">
+<select id = "amd_cpus" style = "display:none" onchange = "myFunctionx()">
 	<option value = "3200g">Ryzen 3 3200g</option>
     <option value = "3400g">Ryzen 5 3400g</option>
     <option value = "3600">Ryzen 5 3600</option>
@@ -39,7 +38,7 @@
 </select>
 
 <h1 id ="no_cpu" style ="display:none">No CPU Brand Selected </h1>
-
+<h1 id ="testid"></h1>
 <script>
 function myFunction(){
 	if (document.getElementById("cpu_brand").value=="intel") {
@@ -56,6 +55,14 @@ function myFunction(){
         document.getElementById("amd_cpus").style.display = "none";
     }
 }
+
+function myFunctionx() {
+	document.getElementById("testid").innerText = document.getElementById("amd_cpus").value;
+}
+function myFunctiony() {
+	document.getElementById("testid").innerText = document.getElementById("intel_cpus").value;
+}
 </script>
+
 </body>
 </html>
