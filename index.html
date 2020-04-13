@@ -5,11 +5,11 @@
 </head>
 
 <h2><center>Eric's Custom Computers</center></h2>
-
-Your Name: <input type="text" id="name"><br><br>
-Contact Email: <input type="email" id="email"><br><br>
-Budget: <input type="number" id="price"><br><br>
-	<center>Briefly describe your needs for this computer</center><br>
+<br><br>
+Your Name: <input type="text" id="name"><br>
+Contact Email: <input type="email" id="email"><br>
+Budget: <input type="number" id="price"><br>
+Briefly describe what you will be doing<br>
 <textarea rows="4" cols="40" id="usefor"></textarea><br><br>
 Additional Options:<br>
 Working <input type = "checkbox" id="work" onclick = "ifdesc()"><br>
@@ -23,9 +23,8 @@ Streaming <input type="checkbox" id="streaming" onclick = "ifdesc()"><br><br>
 function ifdesc() {
   var checkBox = document.getElementById("work");
   var checkBox2= document.getElementById("gaming");
-  var checkBox3= document.getElementById("streaming");
   var text = document.getElementById("descuse");
-  if (checkBox.checked == true || checkBox2.checked == true || checkBox3.checked == true) { 
+  if (checkBox.checked == true || checkBox2.checked == true) { 
   document.getElementById("descdesc").style.display = "block";
   	document.getElementById("descdesc").innerHTML = "Please describe any specific requirements as per the above option(s). <br><br> Target Resolution (1080p, 1440p, 4K, etc.)<br> Frames Per Second (FPS - 60, 144, 240, etc.)";
     text.style.display = "block";
